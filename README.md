@@ -1,3 +1,4 @@
+```mermaid
 usecaseDiagram
     actor "Khách hàng" as KH
     actor "Nhân viên" as NV
@@ -27,3 +28,4 @@ usecaseDiagram
     QL --> (Xem báo cáo)
 
     (Bán giày) --> (Lập hóa đơn) : <<include>>
+```
