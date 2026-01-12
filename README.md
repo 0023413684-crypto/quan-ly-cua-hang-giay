@@ -6,8 +6,10 @@ flowchart LR
 
     subgraph HT[Hệ thống quản lý cửa hàng giày]
         UC1(Đăng nhập)
+
         UC2(Xem giày)
         UC3(Mua giày)
+
         UC4(Bán giày)
         UC5(Lập hóa đơn)
         UC6(Quản lý giày)
