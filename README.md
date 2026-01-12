@@ -1,64 +1,31 @@
 ```mermaid
-classDiagram
-    direction LR
+usecaseDiagram
+    actor "Khách hàng" as KH
+    actor "Nhân viên" as NV
+    actor "Quản lý" as QL
 
-    class CuaHang {
-        +int maCuaHang
-        +string tenCuaHang
-        +string diaChi
-        +string soDienThoai
+    rectangle "Hệ thống quản lý cửa hàng giày" {
+        (Đăng nhập)
+        (Xem giày)
+        (Mua giày)
+        (Bán giày)
+        (Lập hóa đơn)
+        (Quản lý giày)
+        (Quản lý nhân viên)
+        (Xem báo cáo)
     }
 
-    class Giay {
-        +int maGiay
-        +string tenGiay
-        +float giaBan
-        +int soLuong
-        +string size
-    }
+    KH --> (Xem giày)
+    KH --> (Mua giày)
 
-    class LoaiGiay {
-        +int maLoai
-        +string tenLoai
-    }
+    NV --> (Đăng nhập)
+    NV --> (Bán giày)
+    NV --> (Lập hóa đơn)
 
-    class Hang {
-        +int maHang
-        +string tenHang
-    }
+    QL --> (Đăng nhập)
+    QL --> (Quản lý giày)
+    QL --> (Quản lý nhân viên)
+    QL --> (Xem báo cáo)
 
-    class KhachHang {
-        +int maKH
-        +string tenKH
-        +string soDienThoai
-        +string diaChi
-    }
-
-    class NhanVien {
-        +int maNV
-        +string tenNV
-        +string chucVu
-    }
-
-    class HoaDon {
-        +int maHoaDon
-        +date ngayLap
-        +float tongTien
-    }
-
-    class ChiTietHoaDon {
-        +int soLuong
-        +float donGia
-    }
-
-    %% Quan hệ
-    CuaHang "1" --> "n" Giay : quản lý
-    Giay "n" --> "1" LoaiGiay : thuộc
-    Giay "n" --> "1" Hang : thuộc
-
-    KhachHang "1" --> "n" HoaDon : lập
-    NhanVien "1" --> "n" HoaDon : tạo
-
-    HoaDon "1" --> "n" ChiTietHoaDon
-    Giay "1" --> "n" ChiTietHoaDon
+    (Bán giày) --> (Lập hóa đơn) : <<include>>
 ```
