@@ -1,31 +1,31 @@
 ```mermaid
-usecaseDiagram
-    actor "Khách hàng" as KH
-    actor "Nhân viên" as NV
-    actor "Quản lý" as QL
+flowchart LR
+    KH[Khách hàng]
+    NV[Nhân viên]
+    QL[Quản lý]
 
-    rectangle "Hệ thống quản lý cửa hàng giày" {
-        (Đăng nhập)
-        (Xem giày)
-        (Mua giày)
-        (Bán giày)
-        (Lập hóa đơn)
-        (Quản lý giày)
-        (Quản lý nhân viên)
-        (Xem báo cáo)
-    }
+    subgraph HT[Hệ thống quản lý cửa hàng giày]
+        UC1(Đăng nhập)
+        UC2(Xem giày)
+        UC3(Mua giày)
+        UC4(Bán giày)
+        UC5(Lập hóa đơn)
+        UC6(Quản lý giày)
+        UC7(Quản lý nhân viên)
+        UC8(Xem báo cáo)
+    end
 
-    KH --> (Xem giày)
-    KH --> (Mua giày)
+    KH --> UC2
+    KH --> UC3
 
-    NV --> (Đăng nhập)
-    NV --> (Bán giày)
-    NV --> (Lập hóa đơn)
+    NV --> UC1
+    NV --> UC4
+    NV --> UC5
 
-    QL --> (Đăng nhập)
-    QL --> (Quản lý giày)
-    QL --> (Quản lý nhân viên)
-    QL --> (Xem báo cáo)
+    QL --> UC1
+    QL --> UC6
+    QL --> UC7
+    QL --> UC8
 
-    (Bán giày) --> (Lập hóa đơn) : <<include>>
+    UC4 --> UC5
 ```
