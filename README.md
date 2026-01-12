@@ -26,6 +26,4 @@ flowchart LR
     QL --> UC6
     QL --> UC7
     QL --> UC8
-
-    UC4 --> UC5
 ```
