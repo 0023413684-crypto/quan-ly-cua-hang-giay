@@ -5,6 +5,7 @@ flowchart LR
     QL[Quản lý]
 
     subgraph HT[Hệ thống quản lý cửa hàng giày]
+
         UC1(Đăng nhập)
         UC2(Xem giày)
         UC3(Mua giày)
