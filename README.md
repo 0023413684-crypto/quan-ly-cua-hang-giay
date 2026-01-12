@@ -1,37 +1,33 @@
 ```mermaid
 flowchart LR
-    %% Actor
     KH[Khách hàng]
     NV[Nhân viên]
     QL[Quản lý]
 
-    %% System
-    subgraph HT["Hệ thống quản lý<br/>cửa hàng giày"]
-        direction TB
-
-        XemGiay[Xem giày]
-        MuaGiay[Mua giày]
-
-        BanGiay[Bán giày]
-        DangNhap[Đăng nhập]
-        LapHoaDon[Lập hóa đơn]
-
-        QuanLyGiay[Quản lý giày]
-        QuanLyNV[Quản lý nhân viên]
-        XemBaoCao[Xem báo cáo]
+    subgraph HT[Hệ thống quản lý cửa hàng giày]
+        UC1(Đăng nhập)
+        UC2(Xem giày)
+        UC3(Mua giày)
+        UC4(Bán giày)
+        UC5(Lập hóa đơn)
+        UC6(Quản lý giày)
+        UC7(Quản lý nhân viên)
+        UC8(Xem báo cáo)
     end
 
-    %% Khách hàng
-    KH --> XemGiay
-    KH --> MuaGiay
+    KH --> UC2
+    KH --> UC3
 
-    %% Nhân viên
-    NV --> BanGiay
-    NV --> DangNhap
-    NV --> LapHoaDon
+    NV --> UC1
+    NV --> UC4
+    NV --> UC5
 
-    %% Quản lý
-    QL --> QuanLyGiay
-    QL --> QuanLyNV
-    QL --> XemBaoCao
+    QL --> UC1
+    QL --> UC6
+    QL --> UC7
+    QL --> UC8
+
+
+
+    UC4 --> UC5
 ```
